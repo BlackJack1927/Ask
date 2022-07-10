@@ -35,6 +35,7 @@ before_action :set_question, only: %i[ update show destroy edit]
 
     def index
       @questions = Question.all
+      @question = Question.new
     end
 
     def new
