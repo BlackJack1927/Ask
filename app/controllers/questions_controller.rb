@@ -10,7 +10,10 @@ before_action :set_question, only: %i[ update show destroy edit]
           #)
   #в привате опишем метод  question_params = params.require(:question).permit(:body, :user_id)
     question = Question.create(question_params)
-    redirect_to question_path(question)
+
+    #flash[:notice] = 'создан'# - можно так
+
+    redirect_to question_path(question), notice: "created neeew"
   end
 
   def update
@@ -19,13 +22,13 @@ before_action :set_question, only: %i[ update show destroy edit]
       body: params[:question][:body],
     user_id: params[:question][:user_id]
        )
-          redirect_to question_path(@question)
+          redirect_to question_path(@question), notice: "зберегли ваше питання"
     end
 
     def destroy
     #  @question = Question.find(params[:id])
       @question.destroy
-      redirect_to questions_path
+      redirect_to questions_path, notice: "видалили ваше питання"
 
     end
 
