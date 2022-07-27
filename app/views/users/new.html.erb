@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="title">присоединяйся и спрашивай!</h2>
+
+<div class="mt">
+
+  <%= form_with model: @user do |form| %>
+  <p><%=form.label :name, 'Enter you name' %></p>
+  <p><%=form.text_field :name, class: "form-text-field" %></p>
+
+  <p class="mt"><%= form.label :nickname, 'Enter you NickName' %></p>
+  <p><%=form.text_field :nickname, class: "form-text-field" %></p>
+
+  <p class="mt"><%= form.label :email %></p>
+  <p><%=form.text_field :email, class: "form-text-field" %></p>
+
+  <p class="mt"><%= form.label :password %></p>
+  <p><%=form.password_field :password, class: "form-text-field" %></p>
+
+  <p class="mt-lg"><%=form.submit 'Register Now', class: "button button-main"%></p>
+  <% end %>
+  </div>
+</div>
